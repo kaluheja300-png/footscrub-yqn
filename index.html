@@ -1,0 +1,775 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Products & Deals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+            line-height: 1.5;
+            color: #323130;
+            background-color: #ffffff;
+        }
+
+        /* Header Navigation */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #edebe9;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            height: 54px;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .microsoft-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-right: 32px;
+        }
+
+        .logo-squares {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1px;
+            width: 23px;
+            height: 23px;
+            margin-right: 8px;
+        }
+
+        .logo-square {
+            width: 11px;
+            height: 11px;
+        }
+
+        .logo-square:nth-child(1) { background: #f25022; }
+        .logo-square:nth-child(2) { background: #7fba00; }
+        .logo-square:nth-child(3) { background: #00a4ef; }
+        .logo-square:nth-child(4) { background: #ffb900; }
+
+        .logo-text {
+            font-size: 21px;
+            font-weight: 400;
+            color: #323130;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #323130;
+            padding: 16px;
+            font-size: 13px;
+            font-weight: 400;
+            transition: color 0.1s ease;
+            display: block;
+        }
+
+        .nav-link:hover {
+            color: #0078d4;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .call-btn {
+            background: #107c10;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background-color 0.1s ease;
+            margin-right: 8px;
+        }
+
+        .call-btn:hover {
+            background: #0e6e0e;
+            color: white;
+        }
+
+        .sign-in-btn {
+            background: none;
+            border: none;
+            color: #323130;
+            font-size: 13px;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background-color 0.1s ease;
+        }
+
+        .sign-in-btn:hover {
+            background: #f3f2f1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: #0078d4;
+            border: 2px solid #ffffff;
+            padding: 12px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.1s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #f3f2f1;
+            color: #106ebe;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.1s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 80px 24px;
+            background: #f8f9fa;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 600;
+            color: #323130;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #605e5c;
+            font-weight: 400;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: -8px;
+            right: 16px;
+            background: #c50e20;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #323130;
+            margin-bottom: 16px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            color: #605e5c;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .product-pricing {
+            margin-bottom: 24px;
+        }
+
+        .current-price {
+            font-size: 28px;
+            font-weight: 600;
+            color: #0078d4;
+        }
+
+        .original-price {
+            font-size: 16px;
+            color: #a19f9d;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .savings {
+            font-size: 14px;
+            color: #107c10;
+            font-weight: 600;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .product-btn {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+            width: 100%;
+        }
+
+        .product-btn:hover {
+            background: #106ebe;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: #323130;
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .promo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .promo-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .promo-text {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .promo-btn {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.1s ease;
+        }
+
+        .promo-btn:hover {
+            background: #106ebe;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 60px 24px 24px;
+            border-top: 1px solid #edebe9;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #323130;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #605e5c;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.1s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0078d4;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #edebe9;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: #605e5c;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-legal a:hover {
+            color: #0078d4;
+        }
+
+        .footer-lang {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #605e5c;
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .products-section {
+                padding: 60px 16px;
+            }
+
+            .products-container {
+                padding: 0 16px;
+            }
+
+            .footer {
+                padding: 40px 16px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <nav class="nav-bar">
+                <div class="nav-left">
+                    <a href="#" class="microsoft-logo">
+                        <div class="logo-squares">
+                            <div class="logo-square"></div>
+                            <div class="logo-square"></div>
+                            <div class="logo-square"></div>
+                            <div class="logo-square"></div>
+                        </div>
+                        <span class="logo-text">Microsoft</span>
+                    </a>
+                    
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="#" class="nav-link">Support</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Community</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Downloads</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Service Status</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-right">
+                    <a href="tel:+18338213188" class="call-btn">📞 (833) 821-3188</a>
+                    <button class="sign-in-btn">Sign in</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Microsoft Support</h1>
+            <p>Get help with Microsoft products and services. Find solutions, contact support, or get personalized assistance from our experts.</p>
+            <div class="cta-buttons">
+                <a href="tel:+18338213188" class="btn-primary">📞 Call (833) 821-3188</a>
+                <a href="#support" class="btn-secondary">Get help now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options Section -->
+    <section class="products-section" id="support">
+        <div class="products-container">
+            <div class="section-header">
+                <h2 class="section-title">How can we help you?</h2>
+                <p class="section-subtitle">Choose the support option that works best for you</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Phone Support -->
+                <div class="product-card">
+                    <div class="product-badge">Available 24/7</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #107c10, #5bb85b);">
+                        <span style="color: white;">📞</span>
+                    </div>
+                    <h3 class="product-title">Call Support</h3>
+                    <p class="product-description">Speak directly with a Microsoft support specialist for personalized help with your issues.</p>
+                    <div class="product-pricing">
+                        <span class="current-price">(833) 821-3188</span>
+                        <span class="savings">Technical support available</span>
+                    </div>
+                    <a href="tel:+18338213188" class="product-btn" style="text-decoration: none; display: block; text-align: center;">Call now</a>
+                </div>
+
+                <!-- Live Chat -->
+                <div class="product-card">
+                    <div class="product-badge">Instant help</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #0078d4, #40a9ff);">
+                        <span style="color: white;">💬</span>
+                    </div>
+                    <h3 class="product-title">Live Chat</h3>
+                    <p class="product-description">Get real-time assistance from our support team through instant messaging.</p>
+                    <div class="product-pricing">
+                        <span class="current-price">Online now</span>
+                        <span class="savings">Average wait time: 2-5 minutes</span>
+                    </div>
+                    <button class="product-btn" onclick="startChat()">Start chat</button>
+                </div>
+
+                <!-- Self-Service -->
+                <div class="product-card">
+                    <div class="product-badge">Quick solutions</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                        <span style="color: white;">📚</span>
+                    </div>
+                    <h3 class="product-title">Help Articles</h3>
+                    <p class="product-description">Browse our comprehensive knowledge base for step-by-step guides and troubleshooting.</p>
+                    <div class="product-pricing">
+                        <span class="current-price">Self-service</span>
+                        <span class="savings">Comprehensive guides available</span>
+                    </div>
+                    <button class="product-btn" onclick="browseArticles()">Browse help</button>
+                </div>
+
+                <!-- Community -->
+                <div class="product-card">
+                    <div class="product-badge">Community driven</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #ff6b35, #f7931e);">
+                        <span style="color: white;">👥</span>
+                    </div>
+                    <h3 class="product-title">Community Forums</h3>
+                    <p class="product-description">Connect with other users and Microsoft experts in our active community forums.</p>
+                    <div class="product-pricing">
+                        <span class="current-price">Community help</span>
+                        <span class="savings">Join millions of users</span>
+                    </div>
+                    <button class="product-btn" onclick="visitCommunity()">Join community</button>
+                </div>
+
+                <!-- Remote Assistance -->
+                <div class="product-card">
+                    <div class="product-badge">Premium service</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #c50e20, #e74856);">
+                        <span style="color: white;">🖥️</span>
+                    </div>
+                    <h3 class="product-title">Remote Assistance</h3>
+                    <p class="product-description">Let our technicians directly access your device to resolve complex issues quickly.</p>
+                    <div class="product-pricing">
+                        <span class="current-price">Schedule session</span>
+                        <span class="savings">Secure professional service</span>
+                    </div>
+                    <button class="product-btn" onclick="scheduleRemote()">Book session</button>
+                </div>
+
+                <!-- Business Support -->
+                <div class="product-card">
+                    <div class="product-badge">Enterprise</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #323130, #605e5c);">
+                        <span style="color: white;">🏢</span>
+                    </div>
+                    <h3 class="product-title">Business Support</h3>
+                    <p class="product-description">Dedicated support for businesses with priority assistance and account management.</p>
+                    <div class="product-pricing">
+                        <span class="current-price">Enterprise solutions</span>
+                        <span class="savings">Priority support available</span>
+                    </div>
+                    <button class="product-btn" onclick="contactBusiness()">Contact support</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2 class="promo-title">Still need help?</h2>
+            <p class="promo-text">Our support specialists are standing by to provide personalized assistance with your Microsoft products and services.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+18338213188" class="promo-btn">📞 Call (833) 821-3188</a>
+                <a href="#" class="promo-btn" style="background: transparent; border: 2px solid white;" onclick="scheduleCallback()">Schedule callback</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+18338213188">📞 Call (833) 821-3188</a></li>
+                        <li><a href="#">Help & Support</a></li>
+                        <li><a href="#">Community forums</a></li>
+                        <li><a href="#">Contact support</a></li>
+                        <li><a href="#">Service status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Microsoft Store</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Account profile</a></li>
+                        <li><a href="#">Download Center</a></li>
+                        <li><a href="#">Microsoft Store support</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order tracking</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Education</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Microsoft in education</a></li>
+                        <li><a href="#">Office for students</a></li>
+                        <li><a href="#">Office 365 for schools</a></li>
+                        <li><a href="#">Microsoft Azure in education</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enterprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Azure</a></li>
+                        <li><a href="#">AppSource</a></li>
+                        <li><a href="#">Automotive</a></li>
+                        <li><a href="#">Government</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Developer</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Microsoft Visual Studio</a></li>
+                        <li><a href="#">Windows Dev Center</a></li>
+                        <li><a href="#">Developer Center</a></li>
+                        <li><a href="#">Microsoft developer program</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">About Microsoft</a></li>
+                        <li><a href="#">Company news</a></li>
+                        <li><a href="#">Privacy at Microsoft</a></li>
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Contact Microsoft</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of use</a>
+                    <a href="#">Trademarks</a>
+                    <a href="#">Safety & eco</a>
+                    <a href="#">About our ads</a>
+                </div>
+                <div class="footer-lang">
+                    🌐 English (United States)
+                </div>
+            </div>
+        </div>
+    </footer>
+
+       <!-- begin Web-Stat code v 7.0 -->
+<span id="wts2206858"></span>
+<script>var wts=document.createElement('script');wts.async=true;
+wts.src='https://app.ardalio.com/wts7.js';document.head.appendChild(wts);
+wts.onload = function(){ wtsl7(2206858,3); };
+</script><noscript><img src="https://app.ardalio.com/7/3/2206858.png"></noscript>
+<!-- end Web-Stat code v 7.0 -->
+</body></html>
